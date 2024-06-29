@@ -39,7 +39,11 @@ const BookTrainer = ({userData, setUserData}) => {
     const handleAvailability = async (event) => {
         event.preventDefault();
         const sessions = await getSessionByTrainerId(trainerId);
-        setIsChecked(checkAvailability(sessionDate, sessionTime, sessions, trainer.startingTime, trainer.endingTime));
+        if (sessions?.length === 0) {
+            setIsChecked(true);
+            return;
+        }
+       setIsChecked(checkAvailability(sessionDate, sessionTime, sessions, trainer.startingTime, trainer.endingTime));
     }
 
     if (!isLoaded) return <h2>Loading...</h2>

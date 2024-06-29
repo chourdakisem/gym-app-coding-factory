@@ -83,18 +83,24 @@ export const mapSecondsToDuration = (duration) => {
 
 export const mapTimeToSeconds = (time) => {
     let array = time.split("");
-    let hoursToSeconds = (parseInt(array[0]) + parseInt(array[1])) * 3600;
-    let minutesToSeconds = (parseInt(array[3]) + parseInt(array[4])) * 60;
-    return hoursToSeconds + minutesToSeconds;
+    let hoursToSeconds = (parseInt(array[0]) * 10 + parseInt(array[1])) * 3600;
+    let minutesToSeconds = (parseInt(array[3]) * 10 + parseInt(array[4])) * 60;
+    return (hoursToSeconds + minutesToSeconds);
 };
 
 export const checkAvailability = (date, time, sessions, startingTime, endingTime) => {
     if (mapTimeToSeconds(time) < mapTimeToSeconds(startingTime) || mapTimeToSeconds(time) > mapTimeToSeconds(endingTime)) {
         return false;
     }
+
+    if (!date || !time) {
+        return false;
+    }
+
     const dateTime = createDate(date, time);
     const found = sessions.find(session => session.date.slice(0, 16) === dateTime);
     if (found) return false;
+
     return true;
 };
 

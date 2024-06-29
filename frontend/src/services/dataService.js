@@ -23,7 +23,6 @@ export const updateClient = async (user, setUserData) => {
 
     const userData = await response.json();
     if (!response.ok) {
-        console.log(userData);
         return;
     }
     setUserData(userData);
@@ -38,7 +37,6 @@ export const updateTrainer = async (user, setUserData) => {
 
     const userData = await response.json();
     if (!response.ok) {
-        console.log(userData);
         return;
     }
     setUserData(userData);
@@ -84,10 +82,7 @@ export const createNewSession = async (session) => {
 
     const newSession = await response.json();
     if (!response.ok) {
-        console.log(newSession.message);
     }
-    console.log("Session created");
-    console.log(newSession);
 }
 
 export const getSessionByTrainerId = async (id) => {

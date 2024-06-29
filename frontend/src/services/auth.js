@@ -13,7 +13,6 @@ export const handleLogin = async (event, username, password, setUserData, naviga
     const { accessToken, refreshToken, user } = userData;
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
-    console.log(user);
     setUserData(user);
     navigate("/");
 };

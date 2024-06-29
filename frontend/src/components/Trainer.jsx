@@ -11,7 +11,6 @@ const Trainer = ({trainer}) => {
         <div className="trainer-card" onClick={() => navigate(`/trainers/${trainer.id}`)}>
             <div className="trainer-info">
                 <h3>{trainer.user.firstname} {trainer.user.lastname}</h3>
-                <span>Calisthenics</span>
                 <div className="session-info">
                     <span>Fee: {trainer.fee}$</span>
                     <span>Duration: {mapSecondsToDuration(trainer.duration)}</span>
