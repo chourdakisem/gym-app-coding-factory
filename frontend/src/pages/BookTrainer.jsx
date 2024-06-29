@@ -43,6 +43,10 @@ const BookTrainer = ({userData, setUserData}) => {
             setIsChecked(true);
             return;
         }
+        if (!trainer?.duration || !trainer?.fee || !trainer?.startingTime || !trainer?.endingTime) {
+            setIsChecked(false);
+            return;
+        }
        setIsChecked(checkAvailability(sessionDate, sessionTime, sessions, trainer.startingTime, trainer.endingTime));
     }
 

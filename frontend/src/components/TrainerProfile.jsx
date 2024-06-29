@@ -34,7 +34,6 @@ const TrainerProfile = ({userData, setUserData}) => {
         event.preventDefault();
         const trainer = createTrainer(userData.trainer, startingTime, endingTime, fee, duration, location);
         const user = {...userData, firstname, lastname, username, email, phone, trainer}
-        console.log(user);
         await updateTrainer(user, setUserData);
         await handleRefresh(setUserData);
     };
