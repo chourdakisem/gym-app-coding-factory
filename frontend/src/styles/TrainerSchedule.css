@@ -1,0 +1,30 @@
+.trainer-schedule {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    height: 10%;
+    line-height: 100%;
+}
+
+.trainer-schedule-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.accept-btn {
+    padding: 0.2rem 0.3rem;
+    background-color: green;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.reject-btn {
+    padding: 0.2rem 0.3rem;
+    background-color: rgb(212, 1, 1);
+    border: none;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<configuration>
+    <appender name="API-FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/api.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="ERROR-FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/errors.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="gr.aueb.cf.gymapp.filters" level="INFO" additivity="false">
+        <appender-ref ref="API-FILE"></appender-ref>
+    </logger>
+    <logger name="gr.aueb.cf.gymapp.controllers" level="ERROR" additivity="false">
+        <appender-ref ref="ERROR-FILE"></appender-ref>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="API-FILE"></appender-ref>
+        <appender-ref ref="ERROR-FILE"></appender-ref>
+    </root>
+</configuration>

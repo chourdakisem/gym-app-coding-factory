@@ -1,0 +1,35 @@
+.trainer-card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 40%;
+    background-color: rgb(232, 245, 241);
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.1rem rgb(90, 10, 34);
+    margin: 2rem auto;
+    min-width: 246.5px;
+    cursor: pointer;
+}
+
+.trainer-card img {
+    width: 100%;
+    height: auto;
+}
+
+.img-container {
+    width: 20%;
+}
+
+.trainer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.session-info {
+    display: flex;
+    gap: 1rem;
+}
+

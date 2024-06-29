@@ -1,0 +1,96 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    min-width: 394px;
+}
+
+.main-content {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    gap: 3rem;
+    background-color: rgb(232, 245, 241);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    overflow: auto;
+}
+
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    flex-shrink: 4;
+    background-color: rgb(90, 10, 34);
+    color: whitesmoke;
+}
+
+.title {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.listItem {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 1rem 0;
+}
+
+.listItem:hover {
+    text-decoration: underline;
+}
+
+.listItem > svg, span {
+    flex-shrink: 0;
+}
+
+@media (max-width:764px) {
+    
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        margin-left: 0;
+    }
+
+    .listItem {
+        justify-content: center;
+    }
+
+    .listItem > span {
+        display: none;
+    }
+}
+
+@media (max-width: 394px) {
+
+    .main-content {
+        overflow-x: auto;
+    }
+}

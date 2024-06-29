@@ -1,0 +1,75 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.content {
+    margin-bottom: 1rem;
+    height: 90%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.1rem rgb(90, 10, 34);
+    background-color: white; 
+}
+
+.profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.profile-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.profile-form > h2 {
+    color: rgb(90, 10, 34);
+}
+
+.profile-input {
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-input-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-input-info > label {
+    color: rgb(90, 10, 34);
+    font-weight: bold;
+}
+
+.profile-btn {
+    background-color: rgb(90, 10, 34);
+    border: none;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    
+    .profile-form {
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .profile-input {
+        flex-direction: column;
+    }
+
+}
