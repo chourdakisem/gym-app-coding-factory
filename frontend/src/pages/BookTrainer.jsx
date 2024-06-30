@@ -25,6 +25,7 @@ const BookTrainer = ({userData, setUserData}) => {
         const inputTime = event.target.value;
         const formatedTime = formatTime(inputTime);
         setTime(formatedTime);
+        setIsChecked(false);
     };
 
     const handleBooking = async (event) => {
@@ -39,10 +40,7 @@ const BookTrainer = ({userData, setUserData}) => {
     const handleAvailability = async (event) => {
         event.preventDefault();
         const sessions = await getSessionByTrainerId(trainerId);
-        if (sessions?.length === 0) {
-            setIsChecked(true);
-            return;
-        }
+        
         if (!trainer?.duration || !trainer?.fee || !trainer?.startingTime || !trainer?.endingTime) {
             setIsChecked(false);
             return;
@@ -64,7 +62,7 @@ const BookTrainer = ({userData, setUserData}) => {
                     type="date" 
                     placeholder="Select Date"
                     value={sessionDate}
-                    onChange={(event) => setSessionDate(event.target.value)}
+                    onChange={(event) => {setSessionDate(event.target.value); setIsChecked(false);}}
                 />
                 <input 
                     type="text" 

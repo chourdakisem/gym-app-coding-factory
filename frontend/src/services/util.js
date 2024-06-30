@@ -97,6 +97,10 @@ export const checkAvailability = (date, time, sessions, startingTime, endingTime
         return false;
     }
 
+    if (sessions.length === 0) {
+        return true;
+    }
+
     const dateTime = createDate(date, time);
     const found = sessions.find(session => session.date.slice(0, 16) === dateTime);
     if (found) return false;
